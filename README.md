@@ -15,7 +15,7 @@ provide the IP address of the Pi once its up so you can ssh to it.
 The script has been tested for Pi Zero W, Pi Zero 2W, Pi 3 and Pi 4 all running Bookworm 32bit and 64bit versions.
 
 ## Usage
-The script has been designed to work with Bookworm for the time being.
+The script has been designed to work with Pi OS Bookworm only.
 ```bash
 git clone https://github.com/ftao1/pi_imager.git
 cd pi_imager
