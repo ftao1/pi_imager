@@ -1,8 +1,8 @@
 # pi_imager
 
-## Bash script to write Pi OS bookworm to SD Card with customisations.
+## Bash script to write Pi OS Bookworm to SD Card with customisations.
 
-## Pre-amble
+## Preamble
 I wanted a quicker CLI way to write Pi images to SD Card that has customisations I wanted but was lacking in the
 official Pi Imager.
 The official Imager already has a lot of customisation, but lacks console enablement and I didn't want to
@@ -12,7 +12,7 @@ The script is self-explanatory and prompts you for values such as user, password
 provide the IP address of the Pi once its up so you can ssh to it.
 
 ## Testing
-The script has been tested for Pi Zero W, Pi 3 and Pi 4 all running Bookworm 32bit and 64bit versions.
+The script has been tested for Pi Zero W, Pi Zero 2W, Pi 3 and Pi 4 all running Bookworm 32bit and 64bit versions.
 
 ## Usage
 The script has been designed to work with Bookworm for the time being.
