@@ -19,7 +19,7 @@ The script has been designed to work with Bookworm for the time being.
 ```bash
 git clone https://github.com/ftao1/pi_imager.git
 cd pi_imager
-sudo pi_imager
+sudo ./pi_imager
 ```
 
 ## Pi First Boot Customisations changes for Bookworm
