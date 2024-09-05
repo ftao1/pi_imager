@@ -54,7 +54,7 @@ country = "GB"
 keymap = "gb"
 timezone = "Europe/London"
 ```
-Depending on where you are, you will probably want to change the locale info. This file once confgured is save in the
+Depending on where you are, you will probably want to change the locale info. This file once confgured, is saved in the
 boot partition and read on first boot.
 
 ## NOTES:
