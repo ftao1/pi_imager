@@ -67,8 +67,10 @@ I've added a few default values to speed up my processes so they may not work fo
 DEFAULT_SSID="home"
 IMAGE_FILENAME="2024-07-04-raspios-bookworm-arm64-lite.img"
 ```
-
 Set your own Wi-Fi SSID and your choice of default image.
+
+The script was developed on a laptop with built in SD Card reader with default device `/dev/mmcblk0`. This
+device is used in the script.
 
 
 ## License
