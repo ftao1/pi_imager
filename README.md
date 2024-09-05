@@ -67,4 +67,10 @@ IMAGE_FILENAME="2024-07-04-raspios-bookworm-arm64-lite.img"
 Set your own Wi-Fi SSID and your choice of default image.
 
 
+## License
 
+MIT
+
+## Author
+
+These configurations are maintained by F.Tao.
