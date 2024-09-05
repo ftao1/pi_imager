@@ -25,7 +25,37 @@ sudo pi_imager
 ## Pi First Boot Customisations changes for Bookworm
 In the past versions of Pi OS, the way to customise the image on first boot was to add various files to the boot
 partition such as ssh, wpa_supplicant. Bookworm on the other hand does away with this and instead uses a config file
-called "custom.toml". This file contains most of the configs a user might need eg default user, ssh, Wi-Fi details etc.
+called "**custom.toml**". This file contains most of the configs a user might need eg default user, ssh, Wi-Fi details etc.
+The custom.toml file in this script looks like this:
+```bash
+# Raspberry Pi OS custom.toml
+config_version = 1
+
+[system]
+hostname = "$PI_HOSTNAME"
+
+[user]
+name = "$PI_USERNAME"
+password = "$HASHED_PI_PASSWORD"
+password_encrypted = true
+
+[ssh]
+enabled = true
+password_authentication = true
+
+[wlan]
+ssid = "$DEFAULT_SSID"
+password = "$PSK_HASH"
+password_encrypted = true
+hidden = false
+country = "GB"
+
+[locale]
+keymap = "gb"
+timezone = "Europe/London"
+```
+Depending on where you are, you will probably want to change the locale info. This file once confgured is save in the
+boot partition and read on first boot.
 
 ## NOTES:
 I've added a few default values to speed up my processes so they may not work for you. You will need to change:
