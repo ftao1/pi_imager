@@ -21,6 +21,10 @@ git clone https://github.com/ftao1/pi_imager.git
 cd pi_imager
 sudo ./pi_imager.sh
 ```
+The script is interactive and will prompt for values for user, password, Wi-Fi SSID, Wi-Fi password. It will also
+enable SSH, and the console for boards that have the GPIO. Once the info has been gathered, the config file is
+saved to the boot partition. Upon first time boot, the script will attempt to get the IP of the Pi to make it
+easy to ssh to.
 
 ## Pi First Boot Customisations changes for Bookworm
 In the past versions of Pi OS, the way to customise the image on first boot was to add various files to the boot
