@@ -24,7 +24,7 @@ DEFAULT_HOSTNAME="raspberrypi"
 DEFAULT_PI_PASSWORD="raspberry"
 DEFAULT_SSID="home"
 IMAGES_DIR="./images"
-IMAGE_FILENAME="2024-07-04-raspios-bookworm-arm64-lite.img"
+
 
 
 # Temporary files and mounted partitions to clean up
