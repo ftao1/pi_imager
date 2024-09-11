@@ -26,7 +26,6 @@ DEFAULT_SSID="home"
 IMAGES_DIR="./images"
 
 
-
 # Temporary files and mounted partitions to clean up
 MOUNTED_PARTITIONS=()
 
@@ -312,15 +311,15 @@ get_latest_pi_os_versions() {
     for variant in "lite" "full"; do
         for arch in "arm64" "armhf"; do
             local download_page="${base_url}/raspios_${variant}_${arch}/images/"
-            
+
             local page_content=$(curl -s "$download_page")
             local latest_version=$(echo "$page_content" | grep -oP '(?<=href=")[^"]*(?=/)' | grep -E '^raspios_.*[0-9]{4}-[0-9]{2}-[0-9]{2}$' | sort -V | tail -n 1)
-            
+
             if [ -n "$latest_version" ]; then
                 local image_page="${download_page}${latest_version}/"
                 local image_page_content=$(curl -s "$image_page")
                 local image_filename=$(echo "$image_page_content" | grep -oP '(?<=href=")[^"]*(?=")' | grep -E '\.img\.xz$' | head -n 1)
-                
+
                 if [ -n "$image_filename" ]; then
                     PI_OS_VERSIONS["${variant}_${arch}_base"]="${image_page}"
                     PI_OS_VERSIONS["${variant}_${arch}_filename"]="${image_filename}"
@@ -355,15 +354,15 @@ use_default_versions() {
     PI_OS_VERSIONS["lite_arm64_base"]="https://downloads.raspberrypi.com/raspios_lite_arm64/images/raspios_lite_arm64-2024-07-04/"
     PI_OS_VERSIONS["lite_arm64_filename"]="2024-07-04-raspios-bookworm-arm64-lite.img.xz"
     PI_OS_VERSIONS["lite_arm64_sha256"]="2024-07-04-raspios-bookworm-arm64-lite.img.xz.sha256"
-    
+
     PI_OS_VERSIONS["full_arm64_base"]="https://downloads.raspberrypi.com/raspios_full_arm64/images/raspios_full_arm64-2024-07-04/"
     PI_OS_VERSIONS["full_arm64_filename"]="2024-07-04-raspios-bookworm-arm64-full.img.xz"
     PI_OS_VERSIONS["full_arm64_sha256"]="2024-07-04-raspios-bookworm-arm64-full.img.xz.sha256"
-    
+
     PI_OS_VERSIONS["lite_armhf_base"]="https://downloads.raspberrypi.com/raspios_lite_armhf/images/raspios_lite_armhf-2024-07-04/"
     PI_OS_VERSIONS["lite_armhf_filename"]="2024-07-04-raspios-bookworm-armhf-lite.img.xz"
     PI_OS_VERSIONS["lite_armhf_sha256"]="2024-07-04-raspios-bookworm-armhf-lite.img.xz.sha256"
-    
+
     PI_OS_VERSIONS["full_armhf_base"]="https://downloads.raspberrypi.com/raspios_full_armhf/images/raspios_full_armhf-2024-07-04/"
     PI_OS_VERSIONS["full_armhf_filename"]="2024-07-04-raspios-bookworm-armhf-full.img.xz"
     PI_OS_VERSIONS["full_armhf_sha256"]="2024-07-04-raspios-bookworm-armhf-full.img.xz.sha256"
@@ -438,7 +437,7 @@ get_pi_os_image() {
     while true; do
         echo "Enter the name of the Raspberry Pi OS image file [$PI_OS_FILENAME]"
         read -p "Type 'list' to see cached images, or press Enter to check for cached/download latest: " PI_OS_IMAGE
-        
+
         if [ "$PI_OS_IMAGE" = "list" ]; then
             list_cached_images
             continue
@@ -537,7 +536,7 @@ write_image_to_sdcard() {
     local total_size=$(stat -c %s "$IMAGE_FILENAME")
 
     echo -e "\nWriting image to SD card. Please wait..."
-    
+
     # Use pv to show progress and dcfldd to write the image
     pv -s $total_size "$IMAGE_FILENAME" | dcfldd of="$SDCARD" bs=4M
 

@@ -62,10 +62,9 @@ Depending on where you are, you will probably want to change the locale info. Th
 boot partition and read on first boot.
 
 ## NOTES:
-I've added a few default values to speed up my processes so they may not work for you. You will need to change:
+I've added a default values to speed up my processes so they may not work for you. You will need to change:
 ```bash
 DEFAULT_SSID="home"
-IMAGE_FILENAME="2024-07-04-raspios-bookworm-arm64-lite.img"
 ```
 Set your own Wi-Fi SSID and your choice of default image.
 
